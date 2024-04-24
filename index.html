@@ -57,7 +57,7 @@
     </section>
     <section>
         <footer>
-           <p>You can write me at <a href="mailto:desulaidovich@icloud.com">desulaidovich@icloud.com</a> &#128511;</p>
+           <p>You can write me at <a href="mailto:desulaidovich@icloud.com" title="Email">desulaidovich@icloud.com</a> &#128511;</p>
         </footer>
     </section>
     <script>
@@ -76,6 +76,7 @@
             const img = document.createElement("img")
 
             img.setAttribute("src", `./img/${name}.png`)
+            img.setAttribute("title", `${name} profile`)
             a.setAttribute("href", url)
             a.setAttribute("target", "_blank")
             a.appendChild(img)
