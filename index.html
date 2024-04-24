@@ -10,6 +10,7 @@
         :root {
             --fuji-snow-color: #F1F0E8;
             --respite-color: #96B6C5;
+            --infinity-color: #222831
         }
         * {
             font-family: "Courier New", monospace;
@@ -41,19 +42,19 @@
         }
         a {
             text-decoration: none;
-            color: var(--respite-color);
         }
-        p {
-            color: var(--respite-color);
+        a, p {
+            color: var(--infinity-color);
+            font-weight: bold;
         }
         a img {
             width: 48px;
             height: 48px;
-            filter: opacity(50%);
             transition: transform .15s;
+            color: var(--fuji-snow-color);
         }
         a img:hover {
-            filter: opacity(10%);
+            filter: opacity(70%);
             border-radius: 10px;
             transform: scale(1.2);
             transition: transform .3s;
