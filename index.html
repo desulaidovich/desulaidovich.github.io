@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="Contact list"/>
-    <meta name="author" content="Anton Styazhkin aka Desulaidovich"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact list" />
+    <meta name="author" content="Anton Styazhkin" />
+    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFE8C8" />
+    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#374259" />
     <title>Anton S.</title>
     <style>
         :root {
-            --fuji-snow-color: #F1F0E8;
-            --respite-color: #96B6C5;
-            --infinity-color: #222831;
+            color-scheme: light dark;
+
+            --light-background: #FFE8C8;
+            --light-text: black;
+            --dark-background: #374259;
+            --dark-text: #F2D8D8;
         }
         * {
             font-family: "Courier New", monospace;
-            background-color: var(--fuji-snow-color);
+            background-color: light-dark(var(--light-background), var(--dark-background));
             margin: 0;
             padding: 0;
         }
@@ -36,7 +41,7 @@
         ul {
             list-style-type: none;
         }
-        ul li {
+        li {
             display:inline-flex;
             margin: 10px;
         }
@@ -44,20 +49,19 @@
             text-decoration: none;
         }
         a, p {
-            color: var(--infinity-color);
+            color: light-dark(var(--light-text), var(--dark-text));
             font-weight: bold;
         }
-        a img {
-            width: 48px;
-            height: 48px;
+        img {
+            width: 64px;
+            height: 64px;
             transition: transform .15s;
-            color: var(--fuji-snow-color);
         }
         a img:hover {
-            filter: opacity(70%);
-            border-radius: 10px;
+            border-radius: 12%;
             transform: scale(1.2);
             transition: transform .3s;
+            filter: blur(0);
         }
     </style>
 </head>
@@ -73,10 +77,10 @@
     <script>
         const contacts = {
             profiles: [
-                {name: "telegram", url: "https://t.me/desulaidovich"},
-                {name: "github", url: "https://github.com/desulaidovich"}
-            ]
-        }
+            {name: "instagram", url: "https://instagram.com/desulaidovich"},
+            {name: "telegram", url: "https://t.me/desulaidovich"},
+            {name: "github", url: "https://github.com/desulaidovich"}
+        ]}
 
         const contactList = document.getElementById("contacts")
 
@@ -85,8 +89,7 @@
             const a = document.createElement("a")
             const img = document.createElement("img")
 
-            img.setAttribute("src", `./img/${name}.png`)
-            img.setAttribute("title", `${name} profile`)
+            img.setAttribute("src", `./img/${name}.svg`)
             a.setAttribute("href", url)
             a.setAttribute("target", "_blank")
             a.appendChild(img)
