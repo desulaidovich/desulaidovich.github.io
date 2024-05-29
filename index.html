@@ -1,101 +1,111 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Contact list" />
-    <meta name="author" content="Anton Styazhkin" />
-    <meta name="theme-color" media="(prefers-color-scheme: light)" content="#FFE8C8" />
-    <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#374259" />
-    <title>Anton S.</title>
+    <meta name="author" content="Антон Стяжкин" />
+    <meta name="description" content="Пока не придумал" />
+    <meta name="theme-color" content="#f7ede2ff" />
+    <title>Антон Стяжкин</title>
     <style>
         :root {
-            color-scheme: light dark;
+            --wenge: #554a4aff;
+            --linen: #f7ede2ff;
+            --tea-rose-red: #f5cac3ff;
+            --cambridge-blue: #84a59dff;
+            --light-coral: #f28482ff;
+        }
 
-            --light-background: #FFE8C8;
-            --light-text: black;
-            --dark-background: #374259;
-            --dark-text: #F2D8D8;
-        }
-        * {
+        body {
             font-family: "Courier New", monospace;
-            background-color: light-dark(var(--light-background), var(--dark-background));
-            margin: 0;
-            padding: 0;
+            background: var(--linen);
         }
-        section ul,
-        section footer {
+
+        section {
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 90vh;
+
         }
-        section footer {
+
+        section h1 {
+            animation: scale-up-center 0.5s ease-out;
+            text-transform: uppercase;
+
+            font-size: 3rem;
+            color: var(--wenge);
+            -webkit-transition: all 0.5s ease;
+            transition: all 0.5s ease;
+
+            &:hover {
+                color: var(--cambridge-blue);
+            }
+        }
+
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             text-align: center;
         }
-        section ul    {
-            height: 80vh;
-        }
-        h1 {
-            align-self: flex-end;
-        }
+
         ul {
-            list-style-type: none;
+            margin: 0%;
+            padding: 0%;
         }
+
         li {
-            display:inline-flex;
-            margin: 10px;
+            @media screen and (max-width: 600px) and (orientation: portrait) {
+                display: list-item;
+
+                &::marker {
+                    content: "\260D";
+                    margin: .2em;
+                }
+            }
+
+            @media only screen and (min-width: 768px) {
+                display: inline;
+
+                &::before {
+                    content: "\260D";
+                    display: inline-block;
+                    margin: .2em;
+                }
+            }
         }
+
         a {
             text-decoration: none;
+            color: var(--light-coral);
         }
-        a, p {
-            color: light-dark(var(--light-text), var(--dark-text));
-            font-weight: bold;
-        }
-        img {
-            width: 64px;
-            height: 64px;
-            transition: transform .15s;
-        }
-        a img:hover {
-            border-radius: 12%;
-            transform: scale(1.2);
-            transition: transform .3s;
-            filter: blur(0);
+
+        @keyframes scale-up-center {
+            0% {
+                transform: scale(0.5);
+            }
+
+            100% {
+                transform: scale(1);
+            }
         }
     </style>
 </head>
+
 <body>
     <section>
-        <ul id="contacts"></ul>
+        <h1 id="thoughtful-word">Сделай что-нибудь.</h1>
     </section>
-    <section>
-        <footer>
-           <p>You can write me at <a href="mailto:desulaidovich@icloud.com" title="Email">desulaidovich@icloud.com</a> &#128511;</p>
-        </footer>
-    </section>
-    <script>
-        const contacts = {
-            profiles: [
-            {name: "instagram", url: "https://instagram.com/desulaidovich"},
-            {name: "telegram", url: "https://t.me/desulaidovich"},
-            {name: "github", url: "https://github.com/desulaidovich"}
-        ]}
-
-        const contactList = document.getElementById("contacts")
-
-        for (const { name, url } of contacts.profiles) {
-            const li = document.createElement("li")
-            const a = document.createElement("a")
-            const img = document.createElement("img")
-
-            img.setAttribute("src", `./img/${name}.svg`)
-            a.setAttribute("href", url)
-            a.setAttribute("target", "_blank")
-            a.appendChild(img)
-            li.appendChild(a)
-            contactList.appendChild(li)
-        }
-    </script>
+    <footer>
+        <ul>
+            <li><a href="https://t.me/desulaidovich">Telegram</a></li>
+            <li><a href="https://instagram.com/desulaidovich">Instagram</a></li>
+            <li><a href="https://github.com/desulaidovich">GitHub</a></li>
+            <li><a href="mailto:desulaidovich@icloud.com">Email</a></li>
+        </ul>
+    </footer>
 </body>
+
 </html>
