@@ -2,111 +2,75 @@
 <html lang="ru">
 
 <head>
-    <meta charset="utf-8" />
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="Антон Стяжкин" />
-    <meta name="description" content="Пока не придумал" />
-    <meta name="theme-color" content="#f7ede2ff" />
-    <title>Антон Стяжкин</title>
+    <title>Tony</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&display=swap');
+
         :root {
-            --wenge: #554a4aff;
-            --linen: #f7ede2ff;
-            --tea-rose-red: #f5cac3ff;
-            --cambridge-blue: #84a59dff;
-            --light-coral: #f28482ff;
+            --color-text: #222831;
+            --color-bg: #F9F9F9;
+            --font-family: "Open Sans", sans-serif;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --color-bg: #222831;
+                --color-text: #F9F9F9;
+            }
         }
 
         body {
-            font-family: "Courier New", monospace;
-            background: var(--linen);
+            font-family: var(--font-family);
+            background-color: var(--color-bg);
+            color: var(--color-text);
         }
 
-        section {
+        header {
             display: flex;
-            justify-content: center;
             align-items: center;
             height: 80vh;
-            text-align: center;
         }
 
-        section h1 {
-            animation: scale-up-center 0.5s ease-out;
-            text-transform: uppercase;
+        .hero {
+            margin: 0 auto;
 
-            font-size: 3rem;
-            color: var(--wenge);
-            -webkit-transition: all 0.5s ease;
-            transition: all 0.5s ease;
-
-            &:hover {
-                color: var(--cambridge-blue);
-            }
-        }
-
-        footer {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-
-        ul {
-            margin: 0%;
-            padding: 0%;
-        }
-
-        li {
-            @media screen and (max-width: 600px) and (orientation: portrait) {
-                display: list-item;
-
-                &::marker {
-                    content: "\260D";
-                    margin: .2em;
-                }
+            &>* {
+                display: flex;
+                justify-content: center;
             }
 
-            @media only screen and (min-width: 768px) {
-                display: inline;
-
-                &::before {
-                    content: "\260D";
-                    display: inline-block;
-                    margin: .2em;
-                }
-            }
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--light-coral);
-            font-size: 1.1rem;
-        }
-
-        @keyframes scale-up-center {
-            0% {
-                transform: scale(0.5);
+            img {
+                display: block;
+                margin: auto;
+                width: 140px;
+                height: 140px;
+                border-radius: 50%;
+                box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
             }
 
-            100% {
-                transform: scale(1);
+            .title {
+                margin-top: 1rem;
+                font-size: xx-large;
+                font-weight: 800;
+            }
+
+            .description {
+                font-weight: 400;
             }
         }
     </style>
 </head>
 
 <body>
-    <section>
-        <h1 id="thoughtful-word">Сделай что-нибудь.</h1>
-    </section>
-    <footer>
-        <ul>
-            <li><a href="https://t.me/desulaidovich">Telegram</a></li>
-            <li><a href="https://instagram.com/desulaidovich">Instagram</a></li>
-            <li><a href="https://github.com/desulaidovich">GitHub</a></li>
-            <li><a href="mailto:desulaidovich@icloud.com">Email</a></li>
-        </ul>
-    </footer>
+    <header>
+        <div class="hero">
+            <img src="https://avatars.githubusercontent.com/u/167636673?v=4" alt="Фотография">
+            <span class="title">desulaidovich</span>
+            <span class="description">Genius, billionaire, playboy, philanthropist</span>
+        </div>
+    </header>
 </body>
 
 </html>
