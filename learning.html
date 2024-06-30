@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learning</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap');
+
+    :root {
+      --font-family: "Montserrat", sans-serif;
+      --text-color: #233142;
+      --secondary-color: #f2f2f2
+    }
+
+    body {
+      font-family: var(--font-family);
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    header .title,
+    header .subtitle {
+      text-align: center;
+      padding: .2rem 0;
+    }
+
+    header .title {
+      font-size: xx-large;
+      font-weight: 900;
+    }
+
+    header .subtitle {
+      font-size: large;
+      font-weight: 200;
+    }
+
+    nav {
+      align-items: center;
+      display: flex;
+      justify-content: start;
+      white-space: nowrap;
+      border-bottom: 1px solid var(--secondary-color);
+      overflow: auto;
+    }
+
+    nav>li {
+      list-style: none;
+      width: 100%;
+      padding: .5rem;
+      text-align: center;
+
+      &:hover,
+      &:active {
+        background-color: var(--secondary-color);
+      }
+    }
+
+    nav a {
+      padding: .5rem;
+      color: var(--text-color);
+    }
+
+    body {
+      margin: 0 auto;
+      max-width: 1080px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <li>
+        <a href="#">Элемент меню</a>
+      </li>
+      <li>
+        <a href="#">Элемент меню</a>
+      </li>
+      <li>
+        <a href="#">Элемент меню</a>
+      </li>
+      <li>
+        <a href="#">Элемент меню</a>
+      </li>
+      <li>
+        <a href="#">Элемент меню</a>
+      </li>
+    </nav>
+    <p class="title">Заголовок</p>
+    <p class="subtitle">Подзаголовок</p>
+  </header>
+</body>
+
+</html>
