@@ -15,27 +15,17 @@
     }
 
     body {
+      margin: 0 auto;
+      max-width: 1080px;
+
       font-family: var(--font-family);
+      font-style: normal;
+      font-optical-sizing: auto;
+      font-weight: normal;
     }
 
-    a {
+    nav a {
       text-decoration: none;
-    }
-
-    header .title,
-    header .subtitle {
-      text-align: center;
-      padding: .2rem 0;
-    }
-
-    header .title {
-      font-size: xx-large;
-      font-weight: 900;
-    }
-
-    header .subtitle {
-      font-size: large;
-      font-weight: 200;
     }
 
     nav {
@@ -64,9 +54,23 @@
       color: var(--text-color);
     }
 
-    body {
-      margin: 0 auto;
-      max-width: 1080px;
+    .baner {
+      text-align: center;
+      margin: 1rem;
+
+      &>* {
+        margin: 0;
+      }
+
+      &>p:first-child {
+        font-size: xx-large;
+        font-weight: 900;
+      }
+
+      &>p:not(:first-child) {
+        font-size: large;
+        font-weight: 200;
+      }
     }
   </style>
 </head>
@@ -90,8 +94,10 @@
         <a href="#">Элемент меню</a>
       </li>
     </nav>
-    <p class="title">Заголовок</p>
-    <p class="subtitle">Подзаголовок</p>
+    <div class="baner">
+      <p>Заголовок</p>
+      <p>Подзаголовок</p>
+    </div>
   </header>
 </body>
 
