@@ -1,76 +1,157 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tony</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>desulaidovich · go/python</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&display=swap');
-
-        :root {
-            --color-text: #222831;
-            --color-bg: #F9F9F9;
-            --font-family: "Open Sans", sans-serif;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --color-bg: #222831;
-                --color-text: #F9F9F9;
-            }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
         body {
-            font-family: var(--font-family);
-            background-color: var(--color-bg);
-            color: var(--color-text);
-        }
-
-        header {
+            font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            min-height: 100vh;
             display: flex;
             align-items: center;
-            height: 80vh;
+            justify-content: center;
+            padding: 1.5rem;
         }
 
-        .hero {
-            margin: 0 auto;
+        .container {
+            max-width: 680px;
+            width: 100%;
+        }
 
-            &>* {
-                display: flex;
-                justify-content: center;
-            }
+        .avatar {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 1px solid #2a2a2a;
+        }
 
-            img {
-                display: block;
-                margin: auto;
-                width: 140px;
-                height: 140px;
-                border-radius: 50%;
-                box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-            }
+        .green {
+            color: #4caf50;
+        }
 
-            .title {
-                margin-top: 1rem;
-                font-size: xx-large;
-                font-weight: 800;
-            }
+        .dim {
+            color: #666;
+        }
 
-            .description {
-                font-weight: 400;
-            }
+        .prompt {
+            color: #4caf50;
+            user-select: none;
+        }
+
+        .cmd-line {
+            font-family: monospace;
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            margin-bottom: 1rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #1a1a1a;
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            font-family: monospace;
+            border: 1px solid #2a2a2a;
+        }
+
+        .section {
+            margin: 1.8rem 0;
+        }
+
+        .social {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-top: 1.2rem;
+        }
+
+        .social a {
+            color: #aaa;
+            text-decoration: none;
+            font-family: monospace;
+            font-size: 0.85rem;
+            border-bottom: 1px dotted #333;
+            transition: 0.1s;
+        }
+
+        .social a:hover {
+            color: #4caf50;
+            border-bottom-color: #4caf50;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #1e1e1e;
+            margin: 1.5rem 0;
+        }
+
+        .footer {
+            font-size: 0.7rem;
+            color: #444;
+            margin-top: 2rem;
         }
     </style>
 </head>
-
 <body>
-    <header>
-        <div class="hero">
-            <img src="https://avatars.githubusercontent.com/u/167636673?v=4" alt="Фотография">
-            <span class="title">desulaidovich</span>
-            <span class="description">Genius, billionaire, playboy, philanthropist</span>
-        </div>
-    </header>
-</body>
+    <div class="container">
+        <img class="avatar" src="https://avatars.githubusercontent.com/u/167636673?v=4" alt="desulaidovich">
 
+        <div class="cmd-line">
+            <span class="prompt">$</span> whoami
+        </div>
+        <h1>desulaidovich <span class="dim">// backend engineer</span></h1>
+
+        <div class="cmd-line">
+            <span class="prompt">$</span> cat bio.md
+        </div>
+        <div class="section">
+            genius, billionaire, playboy, philanthropist <span class="dim">(according to Stark)</span><br>
+            but actually — just writing <span class="green">Go</span> and <span class="green">Python</span>.
+        </div>
+
+        <div class="cmd-line">
+            <span class="prompt">$</span> echo $STACK
+        </div>
+        <div class="section">
+            <span class="badge">🐹 Go</span>
+            <span class="badge">🐍 Python</span>
+            <span class="badge">🔧 Docker</span>
+            <span class="badge">📡 Postgres</span>
+        </div>
+
+        <div class="cmd-line">
+            <span class="prompt">$</span> ls -la contacts/
+        </div>
+        <div class="social">
+            <a href="#">github/desulaidovich</a>
+            <a href="#">t.me/desulaidovich</a>
+            <a href="#">x.com/desulaidovich</a>
+        </div>
+
+        <hr>
+
+        <div class="footer">
+            <span class="dim">➜ status:</span> <span class="green">● available</span> for work / collaborations<br>
+            <span class="dim">➜ uptime:</span> 24/7 building things that don't suck
+        </div>
+    </div>
+</body>
 </html>
