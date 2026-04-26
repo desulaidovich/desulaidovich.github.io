@@ -1,3 +1,4 @@
-# Why?
+# desulaidovich
 
-because it seems to me to be a fun and versatile tool 
+Terminal-inspired personal landing page.  
+Built with Go & Python vibes. Dark theme, monospace, minimal.
